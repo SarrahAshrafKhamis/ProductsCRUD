@@ -3,16 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { ProductAddComponent } from './product/product-add/product-add.component';
+import { FormsModule } from '@angular/forms';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
+import { PowerPipe } from './pipes/power.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ReplacePipe } from './pipes/replace.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent,
+    ProductDetailsComponent,
+    ProductAddComponent,
+    ProductUpdateComponent,
+    PowerPipe,
+    FilterPipe,
+    ReplacePipe,
+    HighlightDirective,
+    RatingComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

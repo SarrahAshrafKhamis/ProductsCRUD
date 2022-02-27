@@ -1,0 +1,34 @@
+<table class="table table-success">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Available</th>
+      <th>Price</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="prod.Name" appHighlight="lightgreen" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Code" appHighlight />
+      </td>
+      <td>
+        <input
+          type="text"
+          [(ngModel)]="prod.Available"
+          appHighlight="lightgreen"
+        />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Price" appHighlight="lightgreen" />
+      </td>
+      <td>
+        <button class="btn btn-success" (click)="add()">Add</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

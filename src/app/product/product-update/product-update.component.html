@@ -1,0 +1,30 @@
+<table class="table table-warning" *ngIf="prod">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Available</th>
+      <th>Price</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="prod.Name" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Code" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Available" />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Price" />
+      </td>
+      <td>
+        <button class="btn btn-warning" (click)="update()">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

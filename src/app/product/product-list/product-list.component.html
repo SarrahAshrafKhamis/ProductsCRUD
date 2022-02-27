@@ -1,0 +1,48 @@
+<app-product-add></app-product-add>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        <button class="btn btn-info" (click)="toggleShowImages()">
+          Images
+        </button>
+      </th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Available</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of products; index as i">
+      <td>
+        <img
+          *ngIf="showImages"
+          src="../../../assets/images/{{ i > 8 ? i - 8 : i + 1 }}.png"
+        />
+      </td>
+      <td>{{ prod.Name }}</td>
+      <td>{{ prod.Code }}</td>
+      <td>{{ prod.Available | date: "MMM dd, YYYY" }}</td>
+      <td>{{ prod.Price | power: 2 | currency }}</td>
+      <td>
+        <app-rating [num]="i + 1" color="purple"></app-rating>
+      </td>
+      <td>
+        <button class="btn btn-outline-primary" (click)="show(i)">
+          Details
+        </button>
+        <button class="btn btn-outline-danger" (click)="delete(i)">
+          Delete
+        </button>
+        <button class="btn btn-outline-warning" (click)="toUpdate(i)">
+          Update
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-product-details [prod]="prod"></app-product-details>
+<app-product-update [i]="uIndex" [prod]="uProd"></app-product-update>

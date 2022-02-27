@@ -1,0 +1,30 @@
+<table class="table table-primary" *ngIf="prod">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Available</th>
+      <th>Price</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <input type="text" [(ngModel)]="prod.Name" disabled appHighlight />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Code" disabled />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Available" disabled />
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="prod.Price" disabled />
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="discard()">Discard</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
